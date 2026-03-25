@@ -101,11 +101,11 @@ to validate correctness and failure behavior.
 
 ## Sync Model
 
-Each language SDK repo carries a synced copy of this directory in `spec/`.
+This repo is the source of truth for the shared server SDK contract.
 
-The Tripwire main repo owns the source copy, and language SDK repos carry synced mirrors.
+Each language SDK repo carries a synced copy of this repository in `spec/`, and the Tripwire monorepo vendors this repository as a submodule at `sdk-spec/server`.
 
-Keep the synced copy current before advancing submodule pointers in the main repo.
+Keep the synced copies and the monorepo submodule pointer current before advancing them.
 
 ## SDK Authoring Checklist
 
@@ -126,4 +126,4 @@ When changing any server SDK:
 - preserve structured public API errors
 - keep sealed token golden-vector coverage
 - keep one live smoke suite per SDK
-- only update main-repo submodule pointers after the SDK repo CI is green
+- only update the vendored SDK `spec/` copies or the monorepo submodule pointer after the relevant CI is green
